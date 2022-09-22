@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerador de currículo</title>
+</head>
+<body>
+      <form method="POST" action="http://localhost:5000/">
+          <!--name-->
+          <div class="item">
+           <label>Nome completo</label>
+           <input type="text" name="name" required>
+          </div>
+          <!--idade-->
+          <div class="item">
+           <label>Idade</label>
+           <select name="select">
+               {% for i in range(18, 100) %}
+                   <option name="{{i}}">{{i}}</option>
+               {% endfor %}
+           </select>
+          </div>
+
+          <!-- País-->
+          <div class="item">
+           <label>País</label>
+           <select name="select-country">
+               <option name="country">Brasil</option>
+               <option name="country">EUA</option>
+               <option name="country">Canada</option>
+           </select>
+          </div>
+
+          <button class="submit-button" type="submit">Gerar</button>
+      </form>
+
+</body>
+</html>
